@@ -6,7 +6,24 @@
         xmlns:mah="clr-namespace:MahApps.Metro.Controls;assembly=MahApps.Metro"
         xmlns:local="clr-namespace:kalkualtor"
         mc:Ignorable="d"
-        Title="Kalkulator" Height="450" Width="800">
+        Title="Kalkulator" Height="450" Width="450"
+        MinHeight="450" MinWidth="450">
+
+    <mah:MetroWindow.Resources>
+        <Style TargetType="Button" BasedOn="{StaticResource {x:Type Button}}">
+            <Setter Property="FontSize" Value="26" />
+            <Setter Property="Margin" Value="5" />
+        </Style>
+
+        <Style TargetType="TextBox" BasedOn="{StaticResource {x:Type TextBox}}">
+            <Setter Property="FontSize" Value="46" />
+            <Setter Property="HorizontalContentAlignment" Value="Right" />
+            <Setter Property="VerticalContentAlignment" Value="Center" />
+            <Setter Property="Margin" Value="5" />
+            <Setter Property="IsReadOnly" Value="True" />
+        </Style>
+    </mah:MetroWindow.Resources>
+    
     <Grid>
         <Grid.ColumnDefinitions>
             <ColumnDefinition />
@@ -23,7 +40,7 @@
             <RowDefinition />
         </Grid.RowDefinitions>
 
-        <TextBox Grid.ColumnSpan="5"/>
+        <TextBox Grid.ColumnSpan="5" Text="125241"/>
 
         <Button Grid.Row="1" Content="7"/>
         <Button Grid.Row="2" Content="4"/>
