@@ -22,6 +22,15 @@
             <Setter Property="Margin" Value="5" />
             <Setter Property="IsReadOnly" Value="True" />
         </Style>
+
+        <Style x:Key="OperationBtn" TargetType="Button" BasedOn="{StaticResource {x:Type Button}}">
+            <Setter Property="Background" Value="#008800"/>
+            <Style.Triggers>
+                <Trigger Property="IsMouseOver" Value="True">
+                    <Setter Property="Background" Value="#004400"/>
+                </Trigger>
+            </Style.Triggers>
+        </Style>
     </mah:MetroWindow.Resources>
     
     <Grid>
@@ -57,12 +66,12 @@
         <Button Grid.Row="4" Grid.ColumnSpan="2" Content="0"/>
         <Button Grid.Row="4" Grid.Column="2" Content="."/>
 
-        <Button Grid.Row="1" Grid.Column="3" Content="/"/>
-        <Button Grid.Row="2" Grid.Column="3" Content="-"/>
-        <Button Grid.Row="3" Grid.Column="3" Content="*"/>
-        <Button Grid.Row="4" Grid.Column="3" Content="C"/>
+        <Button Grid.Row="1" Grid.Column="3" Content="/" Style="{StaticResource OperationBtn}"/>
+        <Button Grid.Row="2" Grid.Column="3" Content="-" Style="{StaticResource OperationBtn}"/>
+        <Button Grid.Row="3" Grid.Column="3" Content="*" Style="{StaticResource OperationBtn}"/>
+        <Button Grid.Row="4" Grid.Column="3" Content="C" Background="#aa0000"/>
 
-        <Button Grid.Row="1" Grid.Column="4" Grid.RowSpan="2" Content="+"/>
-        <Button Grid.Row="3" Grid.Column="4" Grid.RowSpan="2" Content="="/>
+        <Button Grid.Row="1" Grid.Column="4" Grid.RowSpan="2" Content="+" Style="{StaticResource OperationBtn}"/>
+        <Button Grid.Row="3" Grid.Column="4" Grid.RowSpan="2" Content="=" Background="#2222aa"/>
     </Grid>
 </mah:MetroWindow>
