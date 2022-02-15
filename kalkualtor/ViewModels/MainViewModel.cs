@@ -15,6 +15,14 @@ namespace kalkualtor.ViewModels
 
         public ICommand AddNumberCommand { get; set; }
 
+        public ICommand AddOperationCommand { get; set; }
+
+        public ICommand AddCommaCommand { get; set; }
+
+        public ICommand ClearScreenCommand { get; set; }
+
+        public ICommand GetResultCommand { get; set; }
+
         private string _screenVal = "";
         public string ScreenVal
         {
@@ -38,9 +46,33 @@ namespace kalkualtor.ViewModels
         {
             ScreenVal = "0";
             AddNumberCommand = new RelayCommand(AddNumber);
+            AddOperationCommand = new RelayCommand(AddOperation);
+            AddCommaCommand = new RelayCommand(AddComma);
+            ClearScreenCommand = new RelayCommand(ClearScreen);
+            GetResultCommand = new RelayCommand(GetResult);
+        }
+
+        private void GetResult(object obj)
+        {
+            throw new NotImplementedException();
+        }
+
+        private void ClearScreen(object obj)
+        {
+            throw new NotImplementedException();
+        }
+
+        private void AddComma(object obj)
+        {
+            throw new NotImplementedException();
         }
 
         private void AddNumber(object obj)
+        {
+            throw new NotImplementedException();
+        }
+
+        private void AddOperation(object obj)
         {
             throw new NotImplementedException();
         }
