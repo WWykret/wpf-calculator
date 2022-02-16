@@ -54,8 +54,8 @@ namespace kalkualtor.ViewModels
         private void GetResult(object obj)
         {
             DataTable dataTable = new DataTable();
-            string? result = dataTable.Compute(ScreenVal, "") as string;
-            ScreenVal = result ?? "ERROR";
+            double result = Convert.ToDouble(dataTable.Compute(ScreenVal, ""));
+            ScreenVal = result.ToString().Replace(',', '.');
         }
 
         private void ClearScreen(object obj)
