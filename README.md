@@ -25,7 +25,7 @@ Style of the window was achived using MahApps.Metro framework.
 
 ## Presentation of the application
 
-
+https://user-images.githubusercontent.com/57493639/154286304-19dd88c1-d7d2-4061-97d3-7dfadce0d234.mp4
 
 ## Status
 
