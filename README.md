@@ -6,7 +6,7 @@ Simple calculator supporting basic operations (add, subtract, multiply, divide)
 * [General info](#general-info)
 * [Implementation ideas](#implementation-ideas)
 * [Technologies](#technologies)
-* [Examples of program effects](#examples-of-program-effects)
+* [Presentation of the application](#presentation-of-the-application)
 * [Status](#status)
 
 ## General info
