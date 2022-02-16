@@ -4,9 +4,8 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Linq;
 using System.Runtime.CompilerServices;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Input;
+using System.Data;
 
 namespace kalkualtor.ViewModels
 {
@@ -54,27 +53,50 @@ namespace kalkualtor.ViewModels
 
         private void GetResult(object obj)
         {
-            throw new NotImplementedException();
+            DataTable dataTable = new DataTable();
+            string? result = dataTable.Compute(ScreenVal, "") as string;
+            ScreenVal = result ?? "ERROR";
         }
 
         private void ClearScreen(object obj)
         {
-            throw new NotImplementedException();
+            ScreenVal = "0";
         }
 
         private void AddComma(object obj)
         {
-            throw new NotImplementedException();
+            bool isAfrerDigit = int.TryParse(ScreenVal.AsSpan(ScreenVal.Length - 1), out _);
+            int lastCommaIndex = ScreenVal.LastIndexOf(".");
+            bool isCommaInNumber = lastCommaIndex != -1 && !new[] { '+', '-', '*', '/' }.Any(o => ScreenVal.AsSpan(lastCommaIndex).Contains(o));
+        
+            if (isAfrerDigit && !isCommaInNumber)
+            {
+                ScreenVal += ".";
+            }
         }
 
         private void AddNumber(object obj)
         {
-            throw new NotImplementedException();
+            if (obj is not string number) return;
+
+            if (ScreenVal == "0")
+            {
+                ScreenVal = number;
+            }
+            else
+            {
+                ScreenVal += number;
+            }
         }
 
         private void AddOperation(object obj)
         {
-            throw new NotImplementedException();
+            if (obj is not string operation) return;
+
+            if (int.TryParse(ScreenVal.AsSpan(ScreenVal.Length - 1), out _))
+            {
+                ScreenVal += operation;
+            }
         }
     }
 }

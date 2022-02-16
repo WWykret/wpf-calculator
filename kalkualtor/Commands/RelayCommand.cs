@@ -18,7 +18,7 @@ namespace kalkualtor.Commands
 
         public RelayCommand(Action<object> execute, Predicate<object> canExecute)
         {
-            execute = execute ?? throw new ArgumentNullException(nameof(execute));
+            _execute = execute ?? throw new ArgumentNullException(nameof(execute));
             _canExecute = canExecute;
         }
 
@@ -41,7 +41,8 @@ namespace kalkualtor.Commands
 
         public void Execute(object? parameter)
         {
-            if(parameter != null) _execute(parameter);
+            //if(parameter != null) _execute(parameter);
+            _execute(parameter);
         }
     }
 }
